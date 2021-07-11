@@ -5,22 +5,17 @@ using UnityEngine.UI;
 
 public class DiceRoller : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int[] DiceValues;
+
     void Start()
     {
         DiceValues = new int[4];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public int[] DiceValues;
     public int DiceTotal;
 
-    public bool doneRolling = false;
+    public bool IsDoneRolling = false;
 
     public Sprite[] DiceImageOne;
     public Sprite[] DiceImageZero;
@@ -29,7 +24,7 @@ public class DiceRoller : MonoBehaviour
     {
         // This is the start of a player's turn.
         // We don't have a roll for them yet.
-        doneRolling = false;
+        IsDoneRolling = false;
     }
 
     public void RollTheDice()
@@ -64,7 +59,7 @@ public class DiceRoller : MonoBehaviour
 
             // If we had an animation, we'd have to wait for it to finish before
             // we set doneRolling, but we can just set it right away
-            doneRolling = true;
+            IsDoneRolling = true;
         }
 
         //Debug.Log("Rolled: " + DiceTotal);

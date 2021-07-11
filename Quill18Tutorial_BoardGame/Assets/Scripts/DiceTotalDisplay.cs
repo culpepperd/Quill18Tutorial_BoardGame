@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class DiceTotalDisplay : MonoBehaviour
 {
+    DiceRoller theDiceRoller;
+
     void Start()
     {
         theDiceRoller = GameObject.FindObjectOfType<DiceRoller>();
     }
 
-    DiceRoller theDiceRoller;
 
     void Update()
     {
-        if(theDiceRoller.doneRolling == false)
+        if(theDiceRoller.IsDoneRolling == false)
         {
             GetComponent<Text>().text = "= ?";
         }
